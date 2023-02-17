@@ -1,0 +1,210 @@
+/* Variables */
+
+:root {
+  /* Colors */
+  --pale-blue-100: hsl(225, 100%, 98%);
+  --pale-blue-200: hsl(225, 100%, 94%);
+  --persian-blue: hsl(245, 75%, 52%);
+  --persian-blue-fade: hsl(245, 83%, 68%);
+  --pale-blue-400: hsl(224, 23%, 55%);
+  --pale-blue-800: hsl(223, 47%, 23%);
+  --white: hsl(0, 0%, 100%);
+  /* Typography */
+  --ff-sans: "Red Hat Display", Tahoma, sans-serif;
+  --text-body: 500 clamp(0.9375rem, 0.8779rem + 0.2545vw, 1rem) var(--ff-sans);
+  --text-heading: 900 clamp(1.375rem, 1.019rem + 1.5228vw, 1.75rem) var(--ff-sans);
+  --text-caption: 500 clamp(0.875rem, 0.7566rem + 0.5063vw, 1rem) var(--ff-sans);
+  --text-caption-bold: 900 clamp(0.875rem, 0.7566rem + 0.5063vw, 1rem) var(--ff-sans);
+  --text-button: 900 1rem var(--ff-sans);
+  /* Spacing */
+  --s-1: 1rem;
+  --s-2: 1.25rem;
+  --s-3: 1.5rem;
+  --s-4: 2rem;
+  --s-5: 3rem;
+  /* Border Radius */
+  --rounded-sm: 12px;
+  --rounded-md: 20px;
+  /* Shadows */
+  --shadow-lg: 0px 20px 20px rgba(56, 42, 225, 0.190291);
+  --shadow-md: 0px 16px 16px rgba(56, 42, 225, 0.190291);
+  /* Transition */
+  --transition: all .3s ease;
+}
+
+/* Utils */
+
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start
+}
+
+.stack > * + * {
+  margin-block-start: var(--space, var(--s-1));
+}
+
+.stack[data-stack-align="center"] {
+  align-items: center;
+}
+
+/* Global */
+
+body {
+  min-block-size: 100svh;
+  background-color: var(--pale-blue-200);
+  background-image: url('./images/pattern-background-mobile.svg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: contain;
+}
+
+main {
+  display: grid;
+  place-content: center;
+  min-block-size: 100%;
+  padding-inline: 1rem;
+}
+
+/* Blocks */
+
+.card {
+  max-inline-size: 450px;
+  border-radius: var(--rounded-md);
+  background-color: var(--white);
+  overflow: hidden;
+}
+
+.card__content {
+  padding: var(--s-3);
+}
+
+.card__title {
+  color: var(--pale-blue-800);
+  font: var(--text-heading);
+}
+
+.card__description {
+  color: var(--pale-blue-400);
+  font: var(--text-body);
+  text-align: center;
+}
+
+.plan-details {
+  --space: var(--s-3);
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-wrap: wrap;
+  inline-size: 100%;
+  padding: var(--s-1);
+  background: var(--pale-blue-100);
+  border-radius: var(--rounded-sm);
+}
+
+.plan-details > img {
+  margin-inline-end: var(--s-2);
+}
+
+.plan-details__pricing {
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-title {
+  color: var(--pale-blue-800);
+  font: var(--text-caption-bold);
+}
+
+.pricing-amount {
+  color: var(--pale-blue-400);
+  font: var(--text-caption);
+
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--s-1);
+  min-block-size: 3rem;
+  border: none;
+  background: none;
+  font: var(--text-button);
+  text-decoration: none;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn__full {
+  --space: var(--s-3);
+  inline-size: 100%;
+  color: var(--white);
+  background: var(--persian-blue);
+  border-radius: var(--rounded-sm);
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition);
+}
+
+.btn__full:active {
+  transform: scale(.98);
+  box-shadow: var(--shadow-md);
+}
+
+.btn__full:hover {
+  background-color: var(--persian-blue-fade);
+}
+
+.btn__naked {
+  --space: var(--s-2);
+  color: var(--pale-blue-400);
+}
+
+.btn__naked:hover {
+  color: var(--pale-blue-800);
+  transition: var(--transition);
+}
+
+.plan-details > button {
+  margin-inline-start: auto;
+  color: var(--persian-blue);
+  font: var(--text-caption);
+  font-weight: 900;
+  transition: var(--transition);
+}
+
+.plan-details > button:hover {
+  color: var(--persian-blue-fade);
+}
+
+@media (min-width: 45rem) {
+  body {
+    background-image: url('./images/pattern-background-desktop.svg');
+  }
+
+  .card__content {
+    padding: var(--s-5);
+  }
+
+  .plan-details {
+    --space: var(--s-2);
+    padding: var(--s-3);
+  }
+
+  .btn__full {
+    --space: var(--s-4);
+  }
+
+}

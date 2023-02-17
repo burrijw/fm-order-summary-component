@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat Display:wght@500;700;900&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Order Summary Card | FEM</title>
+  </head>
+  <body>
+    <main>
+      <h1 class="visually-hidden">Order Summary Card</h1>
+      <article class="card">
+        <img
+          class="card__hero-image"
+          src="./images/illustration-hero.svg"
+          alt="illustration of a person listening to music and dancing" />
+        <div class="card__content stack" data-stack-align="center">
+          <h2 class="card__title">Order Summary</h2>
+          <p class="card__description">
+            You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere
+            you like!
+          </p>
+          <div class="plan-details">
+            <img src="./images/icon-music.svg" />
+            <div class="plan-details__pricing">
+              <span class="pricing-title">Annual Plan</span>
+              <span class="pricing-amount">$59.99/year</span>
+            </div>
+            <button class="btn btn__naked" aria-label="Change">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-arrows-exchange-2"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                stroke-width="1.25"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M17 10h-14l4 -4"></path>
+                <path d="M7 14h14l-4 4"></path>
+              </svg>
+            </button>
+          </div>
+          <a class="btn btn__full" href="#">Proceed to Payment</a>
+          <a class="btn btn__naked" href="#">Cancel Order</a>
+        </div>
+      </article>
+    </main>
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+  </body>
+</html>
